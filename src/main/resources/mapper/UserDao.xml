@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+  >  
+
+<mapper namespace="com.ydl.springboot.dao.UserDao" >    
+
+	<resultMap id="autt" type="User">
+		<result column="id" property="id" />
+		<result column="user_no" property="userNo" />
+		<result column="user_name" property="userName" />
+		<result column="user_password" property="userPassword" />
+		<result column="mailbox" property="mailbox" />
+		<result column="in_time" property="inTime" />
+		<result column="avatar" property="avatar" />
+		<result column="mod_time" property="modTime" />
+		<result column="flag" property="flag" />
+	</resultMap>
+ 
+    <select id="getUsers"  resultMap="autt"  parameterType="User">
+    	select  * from user where user_name= #{name}
+    </select>
+    
+     
+</mapper>  

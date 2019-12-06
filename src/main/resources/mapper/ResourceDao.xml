@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+  >  
+
+<mapper namespace="com.ydl.springboot.dao.ResourceDao">
+    
+    <resultMap id="resource" type="Resource">
+        <result column="id" property="id" />
+        <result column="in_time" property="inTime" />
+        <result column="mod_time" property="modTime" />
+        <result column="flag" property="flag" />
+        
+        <result column="uri" property="uri" />
+        
+        <result column="icon" property="icon" />
+        <result column="name" property="name" />
+        <result column="rtype" property="rtype" />
+        
+        <result column="father_id" property="fatherId" />
+    </resultMap>
+	 
+    <select id="getAll" resultMap="resource"  >
+   		select * from  resource    where flag !=-1  order by ruri 
+    </select>
+    
+</mapper>  
